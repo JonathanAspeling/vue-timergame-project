@@ -1,14 +1,17 @@
 <template>
   <div class="playscreen">
     <h1>Boilerplate</h1>
-    <button @click="start">Play</button>
+    <button @click="start" :disabled="isPlaying">Play</button>
+    <Block v-if="isPlaying" :delay="delay" />
   </div>
 </template>
 
 <script>
+import Block from "./components/Block.vue";
+
 export default {
   name: "App",
-  components: {},
+  components: { Block },
   data() {
     return {
       isPlaying: false,
