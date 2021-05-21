@@ -22,3 +22,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 | Date | Description |
 | --- | ----------- |
 |2021/05/19|Vue 3 Fresh Project Setup and initial commit.|
+|2021/05/21| Set up block component - Completed Starting New Game Section.|
