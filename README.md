@@ -23,4 +23,5 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 | --- | ----------- |
 |2021/05/19|Vue 3 Fresh Project Setup and initial commit.|
 |2021/05/21| Set up block component - Completed Starting New Game Section.|
-|2021/05/23|Working with Vue Lifecycle Hooks|
+|2021/05/23|Working with Vue Lifecycle Hooks.|
+|2021/05/24|Continuing with building a reaction timer game.|
