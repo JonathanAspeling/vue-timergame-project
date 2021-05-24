@@ -3,16 +3,18 @@
     <h1>Boilerplate</h1>
     <button @click="start" :disabled="isPlaying">Play</button>
     <Block v-if="isPlaying" :delay="delay" @end="endGame" />
-    <p v-if="showResults">Reaction time: {{score}} ms</p>
+    <!-- <p v-if="showResults">Reaction time: {{score}} ms</p> -->
+    <Results v-if="showResults" :score="score" @clearOverlay="clearOverlay"> </Results>
   </div>
 </template>
 
 <script>
 import Block from "./components/Block.vue";
+import Results from "./components/Results.vue";
 
 export default {
   name: "App",
-  components: { Block },
+  components: { Block, Results },
   data() {
     return {
       isPlaying: false,
@@ -32,6 +34,9 @@ export default {
       this.isPlaying = false;
       this.showResults = true;
     },
+    clearOverlay(){
+      this.showResults = false;
+    }
   },
 };
 </script>
