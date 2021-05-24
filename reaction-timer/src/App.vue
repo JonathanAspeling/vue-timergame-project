@@ -2,8 +2,7 @@
   <div class="playscreen">
     <h1>Boilerplate</h1>
     <button @click="start" :disabled="isPlaying">Play</button>
-    <Block v-if="isPlaying" :delay="delay" @end="endGame" />
-    <!-- <p v-if="showResults">Reaction time: {{score}} ms</p> -->
+    <Block v-if="isPlaying" :delay="delay" @end="endGame" />    
     <Results v-if="showResults" :score="score" @clearOverlay="clearOverlay"> </Results>
   </div>
 </template>
@@ -54,6 +53,7 @@ button {
   height: 5em;
   width: 10em;
   display: inline-block;
+  cursor: pointer;
   padding: 0.3em 1.2em;
   margin: 0 0.3em 0.3em 0;
   border-radius: 2em;

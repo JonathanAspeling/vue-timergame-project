@@ -1,19 +1,34 @@
 <template>
   <div id="overlay" @click="hideOverlay">
     <div id="text">
-      <h2>You clicked within {{score}} ms</h2>
+      <h2>You clicked within {{ score }} ms your rank: {{ rank }}</h2>
     </div>
   </div>
 </template>
 
 <script>
 export default {
- props:['score'],
- methods:{
-     hideOverlay(){
-         this.$emit('clearOverlay',false)
-     }
- }
+  props: ["score"],
+  data() {
+    return {
+      rank: null,
+    };
+  },
+  mounted() {
+    console.log(this.score);
+    if (this.score < 250) {
+      this.rank = "Ninja Fingers";
+    } else if (this.score < 400) {
+      this.rank = "Rapid Reflexes";
+    } else {
+      this.rank = "Snail Pace";
+    }
+  },
+  methods: {
+    hideOverlay() {
+      this.$emit("clearOverlay", false);
+    },
+  },
 };
 </script>
 
