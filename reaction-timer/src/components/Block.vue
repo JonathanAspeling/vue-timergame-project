@@ -9,7 +9,7 @@ export default {
     return {
       showBlock: false,
       timer: null,
-      reactionTimer: 0,
+      reactionTime: 0,
     };
   },
   mounted() {
@@ -21,12 +21,13 @@ export default {
   methods: {
     startTimer() {
       this.timer = setInterval(() => {
-        this.reactionTimer += 10;
+        this.reactionTime += 10;
       }, 10);
     },
     stopTimer() {
       clearInterval(this.timer)
-      console.log(this.reactionTimer)
+      console.log(this.reactionTime)
+      this.$emit('end',this.reactionTime)
     },
   },
 };
